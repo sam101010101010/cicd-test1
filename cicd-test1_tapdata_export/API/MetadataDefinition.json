@@ -1,0 +1,30 @@
+[ {
+  "collectionName" : "MetadataDefinition",
+  "json" : {
+    "apiCount" : 0,
+    "createTime" : 1779864272922,
+    "createUser" : "admin@admin.com",
+    "id" : "6a1692d0f1bb11793ed9ff30",
+    "item_type" : [ "app" ],
+    "lastUpdBy" : "62bc5008d4958d013d97c7a6",
+    "objCount" : 0,
+    "parent_id" : "6a1692d0d1639969866e0df7",
+    "publishedApiCount" : 0,
+    "user_id" : "62bc5008d4958d013d97c7a6",
+    "value" : "API"
+  }
+}, {
+  "collectionName" : "MetadataDefinition",
+  "json" : {
+    "apiCount" : 0,
+    "createTime" : 1779864272628,
+    "createUser" : "admin@admin.com",
+    "id" : "6a1692d0d1639969866e0df7",
+    "item_type" : [ "target" ],
+    "lastUpdBy" : "62bc5008d4958d013d97c7a6",
+    "objCount" : 0,
+    "publishedApiCount" : 0,
+    "user_id" : "62bc5008d4958d013d97c7a6",
+    "value" : "TARGET"
+  }
+} ]
