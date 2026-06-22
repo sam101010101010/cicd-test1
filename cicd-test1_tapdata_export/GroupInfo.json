@@ -1,0 +1,31 @@
+[ {
+  "collectionName" : "GroupInfo",
+  "json" : {
+    "description" : "",
+    "gitInfo" : {
+      "branch" : "main",
+      "repoUrl" : "https://github.com/sam101010101010/cicd-test1.git"
+    },
+    "id" : "6a38d74e6edb30d9ee2df771",
+    "name" : "cicd-test1",
+    "resetTaskList" : [ ],
+    "resourceItemList" : [ {
+      "id" : "6a38d60d6edb30d9ee2df50a",
+      "name" : "Task 1",
+      "type" : "MIGRATE_TASK"
+    }, {
+      "id" : "6a38d6346edb30d9ee2df578",
+      "name" : "Task 2",
+      "type" : "SYNC_TASK"
+    }, {
+      "id" : "6a38d6f66edb30d9ee2df76f",
+      "name" : "policy v1",
+      "type" : "MODULE"
+    }, {
+      "id" : "6a38d72b6edb30d9ee2df770",
+      "name" : "mdm_policy v2",
+      "type" : "MODULE"
+    } ],
+    "user_id" : "6a38d2786edb30d9ee2df4cb"
+  }
+} ]
