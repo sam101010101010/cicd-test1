@@ -25,6 +25,10 @@
       "id" : "6a38d72b6edb30d9ee2df770",
       "name" : "mdm_policy v2",
       "type" : "MODULE"
+    }, {
+      "id" : "6a38ecf26edb30d9ee2df80e",
+      "name" : "Task 3",
+      "type" : "MIGRATE_TASK"
     } ],
     "user_id" : "6a38d2786edb30d9ee2df4cb"
   }
