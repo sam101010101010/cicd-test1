@@ -1,20 +1,27 @@
-# TapData Deploy (Matrix) —— 租户端 caller（手动触发，调用 worker 的 matrix 部署）
+# TapData Deploy (Matrix) —— 租户端 caller（自动部署主入口，调用 worker 的 matrix 部署）
 # ============================================================================
-# 这是租户仓库里的调用入口，用于试用"隐藏自动跳过步骤"的 matrix 部署。
-# 与现有 tapdata-deploy.yml caller 并存，不影响现有 push/tag 自动部署：
-#   - 本文件仅 workflow_dispatch（手动）触发，不监听 push/tag，避免与现有 caller
-#     在同一次 push 上双重运行。
-#   - 在租户仓库 Actions → "TapData Deploy (Matrix)" → Run workflow 手动跑即可。
+# 这是租户仓库的【主】部署入口：隐藏自动跳过步骤的 matrix 版部署。
+# 触发方式（与现有单仓库 caller 一致）：
+#   - push 到 main 且改动 *_tapdata_export/** → 自动部署到 dev
+#   - 推送 tag → 自动部署到 sit
+#   - workflow_dispatch 手动触发 → 部署到所选环境
 #
-# 部署逻辑仍是多租户：实际运行 actions 的是本租户仓库，通过 uses: 调用 worker
-# 仓库的 tapdata-deploy-matrix.yml（worker 作为共享部署引擎被复用）。
+# 部署逻辑是多租户：实际运行 actions 的是本租户仓库，通过 uses: 调用 worker 仓库的
+# tapdata-deploy-matrix.yml（worker 作为共享部署引擎被复用）。
 #
-# 试用满意后，如需自动化，可把现有 caller 切换为本 matrix 版（补上 push/tags 触发，
-# 并停用旧 caller，避免双触发）。
+# 重要：旧的 tapdata-deploy.yml caller 已移到 .github/disabled/（自动触发原样保留但
+# 不生效）。若日后要把它移回 .github/workflows/ 启用，需先停用本 matrix 版的 push/tags，
+# 否则同一次 push/tag 会同时触发新旧两条流水线、部署两遍。
 # ============================================================================
 name: TapData Deploy (Matrix)
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '*_tapdata_export/**'
+    tags:
+      - '*'
   workflow_dispatch:
     inputs:
       target_env:
