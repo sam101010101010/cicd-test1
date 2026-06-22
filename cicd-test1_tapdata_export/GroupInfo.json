@@ -29,6 +29,14 @@
       "id" : "6a38ecf26edb30d9ee2df80e",
       "name" : "Task 3",
       "type" : "MIGRATE_TASK"
+    }, {
+      "id" : "6a38f93a6edb30d9ee2df859",
+      "name" : "Task 4",
+      "type" : "MIGRATE_TASK"
+    }, {
+      "id" : "6a38f9666edb30d9ee2df8d7",
+      "name" : "mdm_policy v3",
+      "type" : "MODULE"
     } ],
     "user_id" : "6a38d2786edb30d9ee2df4cb"
   }
