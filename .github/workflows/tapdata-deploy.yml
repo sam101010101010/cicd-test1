@@ -7,7 +7,8 @@
 #   - workflow_dispatch 手动触发 → 部署到所选环境
 #
 # 部署逻辑是多租户：实际运行 actions 的是本租户仓库，通过 uses: 调用 worker 仓库的
-# tapdata-deploy-matrix.yml（worker 作为共享部署引擎被复用）。
+# .github/workflows/tapdata-deploy.yml（固定入口；其内容当前是 matrix 变体，由 worker
+# 侧从 .github/deploy/ 选型库提升而来）。worker 作为共享部署引擎被复用。
 #
 # 重要：旧的 tapdata-deploy.yml caller 已移到 .github/disabled/（自动触发原样保留但
 # 不生效）。若日后要把它移回 .github/workflows/ 启用，需先停用本 matrix 版的 push/tags，
@@ -42,7 +43,7 @@ on:
 jobs:
   deploy:
     # TODO: Replace {WORKER_REPO} with actual org/repo, e.g. your-org/tapdata-cicd-worker
-    uses: "sam101010101010/cicd-worker/.github/workflows/tapdata-deploy-matrix.yml@main"
+    uses: "sam101010101010/cicd-worker/.github/workflows/tapdata-deploy.yml@main"
     with:
       project: ${{ inputs.project || vars.PROJECT_NAME || github.event.repository.name }}
       target_env: ${{ inputs.target_env || '' }}
