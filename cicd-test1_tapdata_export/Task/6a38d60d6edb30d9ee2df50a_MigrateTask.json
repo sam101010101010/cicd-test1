@@ -288,7 +288,7 @@
     "initialSyncTask" : true,
     "isAutoCreateIndex" : true,
     "isAutoInspect" : false,
-    "isEdit" : false,
+    "isEdit" : true,
     "isFilter" : false,
     "isOpenAutoDDL" : false,
     "isSchedule" : false,
